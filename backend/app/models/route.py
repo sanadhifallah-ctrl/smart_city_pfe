@@ -3,7 +3,6 @@ from app.core.database import Base
 import enum
 from sqlalchemy.sql import func
 
-
 class RouteStatus(str, enum.Enum):
     planned = "planned"
     in_progress = "in_progress"

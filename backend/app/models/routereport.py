@@ -1,5 +1,11 @@
-from sqlalchemy import Column,Integer,Boolean,ForeignKey
+from sqlalchemy import Column,Integer,Boolean,ForeignKey, Enum
+import enum
 from app.core.database import Base 
+
+class StopStatus(str, enum.Enum):
+    visited     = "visited"      
+    skipped     = "skipped"      
+    unreachable = "unreachable"
 
 class RouteReport(Base):
     __tablename__="routereports"
@@ -11,3 +17,5 @@ class RouteReport(Base):
     report_id=Column(Integer,ForeignKey("reports.id"),nullable=False)
 
     visit_order=Column(Integer,nullable=False)
+
+    status      = Column(Enum(StopStatus), nullable=True)

@@ -1,7 +1,12 @@
-from sqlalchemy import Column,Integer,String,Boolean,DateTime
+from sqlalchemy import Column,Integer,String,Boolean,datetime
 from app.core.database import Base 
 import enum
 from sqlalchemy.sql import func
+
+class UserRole(str, enum=Enum):
+    admin ="admin"
+    agent="agent"
+    citezen="citezen"
 
 class User(Base):
     __tablename__="users"
@@ -18,4 +23,4 @@ class User(Base):
     
     is_active=Column(Boolean,default=True)
 
-    created_at = Column(DateTime(timezone=True), server_default=func.now())
+    created_at = Column(datetime(timezone=True), server_default=func.now())
