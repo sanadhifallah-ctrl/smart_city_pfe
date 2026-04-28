@@ -1,5 +1,24 @@
-venv/
-_pycache_/
-.env
-uploads/
+# Python
+__pycache__/
 *.pyc
+
+# Virtual environment
+venv/
+venv_ai/
+backend/venv/
+backend/venv_ai/
+
+# Environment variables
+.env
+backend/.env
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
