@@ -6,8 +6,8 @@ with open("tunisian_dic.json", "r", encoding ="utf-8" ) as f:
 
 def extract_category(text: str)-> str:
    for category, keyword in KEYWORDS["category"].items():
-      for keyword in keywords:
-         if keyword in text:
+      for k in keyword:
+         if k in text:
            return category 
    return "nolabel"        
 
@@ -32,7 +32,7 @@ def extract_location(text: str) -> str:
             
     return "nolabel"
     
-def extract_infomation_extractor(text: str) -> dict:
+def extract_infomation(text: str) -> dict:
   category      = extract_category(text)   
   priority      = extract_priority(text)   
   location      = extract_location(text)  

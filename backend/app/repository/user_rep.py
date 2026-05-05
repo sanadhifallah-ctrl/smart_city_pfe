@@ -19,8 +19,7 @@ def get_user_by_id(db:Session,id_user:int):
     return db.query(User).filter(User.id==id_user).first()
 
 def update_user_password(db:Session,user:User,hashed_password:str):
-    user.password=hashed_passwordpassword
-    db.commit()
+    user.password=hashed_password
     db.refresh(user)
     
     return user
